@@ -1,0 +1,369 @@
+%To Start the system type start.
+% Name : - L.G. Chathuranga
+
+:- use_module(library(jpl)).
+start :-sleep(0.4),
+		write('-----------------------------------------------------------------'),nl,
+		sleep(0.4),
+		write('*****************************************************************'),nl,
+		sleep(0.2),
+		write("###################||| VEHICLE EXPERT SYSTEM |||#########################"),nl,
+		sleep(0.4),
+		write('*****************************************************************'),nl,
+		sleep(0.4),
+		write('-----------------------------------------------------------------'),nl,nl,nl,
+
+		interface2.
+
+        details(Customer,light):- verify(Customer," Do you want a light vehicle (y/n) ?").
+
+        details(Customer,transport):- verify(Customer," Do you find a vehicle for transport (y/n) ?").
+
+        details(Customer,being_active_doing_things) :- verify(Customer," Do you care about being active doing things  (y/n) ?").
+
+	details(Customer,what_people_think_of_me) :- verify(Customer," Do you care about what people think about you (y/n) ?").
+
+	details(Customer,i_seem_rich) :- verify(Customer," Do you want them to think you are rich (y/n) ?").
+
+	details(Customer,love_it) :- verify(Customer," Do you like DEBT (y/n) ?").
+
+	details(Customer,fun) :- verify(Customer," Do you find a car for fun (y/n) ?").
+
+	details(Customer,being_osm):- verify(Customer," Do you want to be awesome (y/n) ?").
+
+	details(Customer,going_fast) :- verify(Customer," Do you want to go fast (y/n) ?").
+
+	details(Customer,six) :- verify(Customer," How many Cylinders? six (y/n) ").
+
+	details(Customer,petrol):- verify(Customer," Is your fuel type should be petrol (y/n) ?").
+
+	details(Customer,diesel):- verify(Customer," Is your fuel type should be diesel (y/n) ?").
+
+	details(Customer,batteries):- verify(Customer," Do you want a battery electric vehicle (y/n) ?").
+
+	details(Customer,manual):- verify(Customer," Is your transmission manual (y/n) ?").
+
+	details(Customer,auto):- verify(Customer," Is your transmission auto (y/n) ?").
+
+	details(Customer,alloy):- verify(Customer," Do you consider in alloy wheels (y/n) ?").
+
+	details(Customer,entertainment):- verify(Customer," Do you want an inbuild entertainment system (y/n) ?").
+
+	details(Customer,fog):- verify(Customer," Do you consider in fog lights (y/n) ?").
+
+	details(Customer,autobrake):- verify(Customer," Do you consider in autobrake (y/n) ?").
+
+	details(Customer,electricseat):- verify(Customer," Do you want electrical seat (y/n) ?").
+
+	details(Customer,power_steering):- verify(Customer," Is it should be Power Steering enabled (y/n) ?").
+
+	details(Customer,rear_wheel):- verify(Customer," Does the Rear wheels should be double (y/n) ?").
+
+	details(Customer,multifunction_steering_wheel):- verify(Customer," Do you consider in Multifunction steering wheel (y/n) ?").
+
+        details(Customer,luxury):- verify(Customer," Is it should be a luxury vehicle (y/n) ?").
+
+	details(Customer,airbag):- verify(Customer," Are you considering in Airbags (y/n) ?").
+
+	details(Customer,sporty):- verify(Customer," Vehicle should be sporty (y/n) ?").
+
+	details(Customer,off_road):- verify(Customer," Is it should be able to drive in off roads (y/n) ?").
+
+	details(Customer,paddle_shift):- verify(Customer," Are you considering paddle shift availability (y/n) ?").
+
+	details(Customer,power_mirror):- verify(Customer," Do you want power mirrors (y/n) ?").
+
+	details(Customer,power_shutter):- verify(Customer," Do you want power shutters (y/n) ?").
+
+	details(Customer,ecofriendly):- verify(Customer," Does the vehicle should be hybrid ecofriendly (y/n) ?").
+
+	details(Customer,digital_dashboard):- verify(Customer," Do you want a digitalized dashboard (y/n) ?").
+
+	details(Customer,the_environment):- verify(Customer," Do you think about the environment (y/n) ?").
+
+	details(Customer,rear_wiper):- verify(Customer," Are you looking for rear wiper (y/n) ?").
+
+	details(Customer,hatchback):- verify(Customer," Do your want a Hatchback car (y/n) ?").
+
+	details(Customer,heavy):- verify(Customer," Do your want a heavy vehicle (y/n) ?").
+
+
+
+
+
+    find_car(Customer,hondaFit) :-
+	details(Customer,light),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,auto),
+        details(Customer,being_active_doing_things).
+
+
+    find_car(Customer,mercedesBenz) :-
+	details(Customer,light),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,auto),
+        details(Customer,what_people_think_of_me),
+        details(Customer,i_seem_rich).
+
+
+
+    find_car(Customer,wagon) :-
+		details(Customer,light),
+        details(Customer,transport),
+	details(Customer,petrol),
+		details(Customer,auto),
+		details(Customer,hatchback),
+		details(Customer,alloy).
+
+
+	find_car(Customer,alto) :-
+		details(Customer,light),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,manual),
+		details(Customer,fog),
+		details(Customer,rear_wiper).
+
+
+	find_car(Customer,axio) :-
+		details(Customer,light),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,auto),
+		details(Customer,fog),
+		details(Customer,rear_wiper).
+
+
+	find_car(Customer,mitsubishiRosa) :-
+		details(Customer,heavy),
+        details(Customer,transport),
+        details(Customer,diesel),
+        details(Customer,manual),
+        details(Customer,power_steering),
+        details(Customer,rear_wheel),
+        details(Customer,multifunction_steering_wheel).
+
+
+    find_car(Customer,toyotaCoaster) :-
+	details(Customer,heavy),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,manual),
+        details(Customer,power_steering),
+        details(Customer,rear_wheel).
+
+
+    find_car(Customer,leylandBus) :-
+	details(Customer,heavy),
+        details(Customer,transport),
+        details(Customer,diesel),
+        details(Customer,manual),
+        details(Customer,power_steering),
+        details(Customer,rear_wheel).
+
+
+    find_car(Customer,vezel) :-
+	details(Customer,light),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,auto),
+        details(Customer,luxury),
+        details(Customer,alloy),
+        details(Customer,airbag),
+        details(Customer,off_road).
+
+
+    find_car(Customer,montero) :-
+	details(Customer,light),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,auto),
+        details(Customer,luxury),
+        details(Customer,airbag),
+        details(Customer,paddle_shift),
+        details(Customer,power_mirror),
+        details(Customer,power_shutter).
+
+
+    find_car(Customer,roomy) :-
+	details(Customer,light),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,auto),
+        details(Customer,alloy),
+        details(Customer,ecofriendly),
+        details(Customer,airbag),
+        details(Customer,sporty).
+
+
+    find_car(Customer,premio) :-
+	details(Customer,light),
+        details(Customer,transport),
+        details(Customer,petrol),
+        details(Customer,auto),
+        details(Customer,alloy),
+        details(Customer,ecofriendly),
+        details(Customer,airbag),
+        details(Customer,digital_dashboard).
+
+
+    find_car(Customer,nissanLEAF):-
+	details(Customer,light),
+		details(Customer,transport),
+		details(Customer,batteries),
+		details(Customer,auto),
+		details(Customer,hatchback),
+		details(Customer,alloy),
+		details(Customer,airbag),
+		details(Customer,ecofriendly).
+
+
+    find_car(Customer,morgan):-
+	details(Customer,light),
+		details(Customer,fun),
+		details(Customer,petrol),
+		details(Customer,being_osm).
+
+
+	find_car(Customer,nissanGtr):-
+	details(Customer,light),
+		details(Customer,fun),
+		details(Customer,petrol),
+		details(Customer,auto),
+		details(Customer,being_osm),
+		details(Customer,six).
+
+
+	find_car(Customer,porsche):-
+		details(Customer,light),
+		details(Customer,fun),
+		details(Customer,petrol),
+		details(Customer,going_fast),
+		details(Customer,six).
+
+
+
+	find_car(_,"better vehicle next time").
+
+    response(Reply) :-
+        read(Reply),
+        write(Reply),nl.
+
+
+
+
+ask(Customer,Question) :-
+	write(Customer),write(' , '),write(Question),
+	interface(' , ',Customer,Question),
+	write('Loading.'),nl,
+	sleep(1),
+	write('Loading..'),nl,
+	sleep(1),
+	write('Loading...'),nl,
+	sleep(1),
+    nl.
+
+
+
+
+
+:- dynamic yes/1,no/1.
+
+verify(P,S) :-
+   (yes(S)   ->    true ;
+		(no(S)    ->    fail ;
+		ask(P,S)
+	)
+
+   ).
+
+undo :- retract(yes(_)),fail.
+undo :- retract(no(_)),fail.
+undo.
+
+runPython(Vehicle):-
+		process_create(path('py'),
+        ['test.py', Vehicle],
+        [stdout(pipe(In))]),
+	read_string(In, Len, X),
+	write(Len:X), nl, halt.
+
+customer(Customer):-
+
+		find_car(Customer,CarType),
+		interface3(Customer,', you probably match ',CarType,'.'),
+		runPython(CarType),
+        write(Customer),write(', you probably match'),write(CarType),write('.'),undo,end.
+
+end :-
+		nl,nl,nl,
+		sleep(0.7),
+		write('*****************************************************************'),nl,
+		sleep(0.4),
+		write("################||| THANK YOU FOR USE ME |||#####################"),nl,
+		sleep(0.4),
+		write('*****************************************************************'),nl.
+
+interface(X,Y,Z) :-
+	atom_concat(Y,X, FAtom),
+	atom_concat(FAtom,Z,FinalAtom),
+	jpl_new('javax.swing.JFrame', ['Expert System'], F),
+	jpl_new('javax.swing.JLabel',['--- VEHICLE EXPERT SYSTEM ---'],LBL),
+	jpl_new('javax.swing.JPanel',[],Pan),
+	jpl_call(Pan,add,[LBL],_),
+	jpl_call(F,add,[Pan],_),
+	jpl_call(F, setLocation, [400,300], _),
+	jpl_call(F, setSize, [400,300], _),
+	jpl_call(F, setVisible, [@(true)], _),
+	jpl_call(F, toFront, [], _),
+	jpl_call('javax.swing.JOptionPane', showInputDialog, [F,FinalAtom], N),
+	jpl_call(F, dispose, [], _),
+
+	write(N),nl,
+	( (N == yes ; N == y)
+      ->
+       assert(yes(Z)) ;
+       assert(no(Z)), fail).
+
+interface2 :-
+	jpl_new('javax.swing.JFrame', ['Expert System'], F),
+	jpl_new('javax.swing.JLabel',['--- VEHICLE EXPERT SYSTEM ---'],LBL),
+	jpl_new('javax.swing.JPanel',[],Pan),
+	jpl_call(Pan,add,[LBL],_),
+	jpl_call(F,add,[Pan],_),
+	jpl_call(F, setLocation, [400,300], _),
+	jpl_call(F, setSize, [400,300], _),
+	jpl_call(F, setVisible, [@(true)], _),
+	jpl_call(F, toFront, [], _),
+	jpl_call('javax.swing.JOptionPane', showInputDialog, [F,'Hi, First of all tell me your name please'], N),
+	jpl_call(F, dispose, [], _),
+
+	(	N == @(null)
+		->	write('You cancelled'),interface3('You cancelled. ','Thank you ','for use ','me.'),end,fail
+		;	write("Hi, First of all tell me your name please : "),write(N),nl,customer(N)
+	).
+
+
+interface3(P,W1,D,W2) :-
+	atom_concat(P,W1, A),
+	atom_concat(A,D,B),
+	atom_concat(B,W2,W3),
+	jpl_new('javax.swing.JFrame', ['Expert System'], F),
+	jpl_new('javax.swing.JLabel',['--- VEHICLE EXPERT SYSTEM ---'],LBL),
+	jpl_new('javax.swing.JPanel',[],Pan),
+	jpl_call(Pan,add,[LBL],_),
+	jpl_call(F,add,[Pan],_),
+	jpl_call(F, setLocation, [400,300], _),
+	jpl_call(F, setSize, [400,300], _),
+	jpl_call(F, setVisible, [@(true)], _),
+	jpl_call(F, toFront, [], _),
+	jpl_call('javax.swing.JOptionPane', showMessageDialog, [F,W3], N),
+	jpl_call(F, dispose, [], _),
+	(	N == @(void)
+		->	write('')
+		;	write("")
+	).
+
+help :- write("To start the expert system please type 'start.' and press Enter key").
